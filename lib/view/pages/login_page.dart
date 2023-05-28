@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
-import '../../model/services/local_storage/shared_preferences.dart';
 import '../../utilities/app_constants.dart';
 import '../../utilities/enums.dart';
+import '../../utilities/services/local_storage/shared_preferences.dart';
 import '../../view_model/account/login_cubit.dart';
 import '../shared_widgets/default_form_field.dart';
 import '../shared_widgets/default_text.dart';

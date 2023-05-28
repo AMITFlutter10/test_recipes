@@ -37,9 +37,8 @@
 // //
 
 import 'package:flutter/material.dart';
-
-import '../../model/services/local_storage/shared_preferences.dart';
 import '../../utilities/enums.dart';
+import '../../utilities/services/local_storage/shared_preferences.dart';
 import '../shared_widgets/default_text.dart';
 
 class FavoritesList extends StatefulWidget {

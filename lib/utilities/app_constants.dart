@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/services/local_storage/shared_preferences.dart';
+import 'package:test_recipes_app/utilities/services/local_storage/shared_preferences.dart';
 import 'enums.dart';
 
 var emailController = TextEditingController(text: MyCache.getString(key: MySharedKeys.email));
@@ -17,4 +17,4 @@ final List<Widget> imgList = [
 
 
 ////categories
-List<String> categories = [ "recipesHome", "favoritePage",];
+List<String> categories = [ "Home", "Favorite",];

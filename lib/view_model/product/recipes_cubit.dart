@@ -2,8 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import '../../../model/recipes_model.dart';
-import '../../model/services/remote/dio_helper.dart';
-import '../../model/services/remote/end_points.dart';
+import '../../utilities/services/remote/dio_helper.dart';
+import '../../utilities/services/remote/end_points.dart';
 
 part 'recipes_state.dart';
 

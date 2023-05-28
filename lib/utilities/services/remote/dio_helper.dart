@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:test_recipes_app/model/services/local_storage/shared_preferences.dart';
 import 'package:test_recipes_app/utilities/enums.dart';
+import '../local_storage/shared_preferences.dart';
 import 'end_points.dart';
 
 class DioHelper {

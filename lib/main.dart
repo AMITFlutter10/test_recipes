@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 import 'package:test_recipes_app/utilities/router.dart';
+import 'package:test_recipes_app/utilities/services/local_storage/shared_preferences.dart';
 import 'package:test_recipes_app/view_model/Favorites/favorite_cubit.dart';
 import 'package:test_recipes_app/view_model/account/login_cubit.dart';
 import 'package:test_recipes_app/view_model/product/recipes_cubit.dart';
-import 'model/services/local_storage/shared_preferences.dart';
 
 
 void main() async{

@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:test_recipes_app/utilities/enums.dart';
-import '../../model/services/local_storage/shared_preferences.dart';
+import '../../utilities/services/local_storage/shared_preferences.dart';
 part 'favorite_state.dart';
 
 class FavoriteCubit extends Cubit<FavoriteState> {
