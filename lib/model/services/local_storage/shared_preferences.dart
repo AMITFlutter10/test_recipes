@@ -1,7 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../utilities/enums.dart';
-
+import '../../../../utilities/enums.dart';
 
 class MyCache {
   static SharedPreferences? preferences;
@@ -52,4 +51,9 @@ class MyCache {
   static Future<void> clearShared() async {
     await preferences?.clear();
   }
+
+
+
 }
+
+
