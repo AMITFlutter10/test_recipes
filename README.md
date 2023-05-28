@@ -15,11 +15,13 @@ A few resources to get you started if this is your first Flutter project:
 - https://pub.dev/packages/dio
 - https://pub.dev/packages/bloc
 - https://pub.dev/packages/carousel_slider
+- https://pub.dev/packages/sizer
 
 * Architecture for project MVVM
 * StateManagement BLOC"Cubit"
 * Api "DIO"
 * LocalStorage : SharedPreferences
+* responsive : Sizer
 
 
 
