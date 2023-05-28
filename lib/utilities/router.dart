@@ -5,6 +5,7 @@ import 'package:test_recipes_app/view/pages/login_page.dart';
 
 import '../model/recipes_model.dart';
 import '../view/pages/RecipeDetailsPage.dart';
+import '../view/pages/favorite_list.dart';
 import '../view/pages/recipes.dart';
 
 Route<dynamic>? onGenerate(RouteSettings routeSettings) {
@@ -23,6 +24,10 @@ Route<dynamic>? onGenerate(RouteSettings routeSettings) {
       RecipesModel recipes = routeSettings.arguments as RecipesModel;
     return MaterialPageRoute(
         builder: (_) => RecipeDetailsPage(recipes),
+        settings: routeSettings,
+      ); case AppRoutes.favoritePageRoute:
+    return MaterialPageRoute(
+        builder: (_) => FavoritesList(),
         settings: routeSettings,
       );
     default:

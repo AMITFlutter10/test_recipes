@@ -14,3 +14,7 @@ final List<Widget> imgList = [
   Image.network("https://img.hellofresh.com/w_1080,f_webp,q_auto/hellofresh_s3/image/schwedische-frikadellen-mit-kartoffelstampf-5c8d2614.jpg"),
   Image.network("https://img.hellofresh.com/w_1080,f_webp,q_auto/hellofresh_s3/image/fisch-auf-rauchigem-ratatouille-efe93706.jpg"),
 ];
+
+
+////categories
+List<String> categories = [ "recipesHome", "favoritePage",];

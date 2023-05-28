@@ -22,6 +22,8 @@ class _RecipesPageState extends State<RecipesPage> {
     recipesCubit.getRecipes();
     super.initState();
   }
+  int selectedIndex = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +50,16 @@ class _RecipesPageState extends State<RecipesPage> {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        SizedBox(
+                          height: 65,
+                          width: double.infinity,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: categories.length,
+                            itemBuilder: (context, index) => buildCategoriesItem(index),
+                          ),
+                        ),
+                       const SizedBox(height: 20,),
                         CarouselSlider(
                           options: CarouselOptions(
                             aspectRatio: 2.0,
@@ -76,11 +88,48 @@ class _RecipesPageState extends State<RecipesPage> {
                               final recipe = recipesCubit.recipes[index];
                               return Padding(
                                   padding: const EdgeInsets.all(18.0),
-                                  child: recipesCard(recipe));
+                                  child: RecipesCard(recipes: recipe,));
                             },
                           ),
                         ),
                       ]))));
-    });
+    }
+
+    );
+
   }
+
+
+  Widget buildCategoriesItem(int index) {
+    return GestureDetector(
+      onTap: () {
+          setState(() {
+            selectedIndex = index;
+            Navigator.pushNamed(context, categories[index]);
+          });
+      },
+      child: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.only(left: 12),
+        padding:const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 20,
+        ),
+        decoration: BoxDecoration(
+            color:
+            selectedIndex == index ? Color(0xFFEFF3EE) : Colors.transparent,
+            borderRadius: BorderRadius.circular(
+                1620
+            )),
+        child: Text(
+          categories[index],
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: selectedIndex == index ? Colors.teal : Color(0xFFC2C2B5),
+          ),
+        ),
+      ),
+    );
+  }
+
 }
