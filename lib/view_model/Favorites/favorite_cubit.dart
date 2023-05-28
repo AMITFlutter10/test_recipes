@@ -36,14 +36,17 @@ class FavoriteCubit extends Cubit<FavoriteState> {
     return favoriteRecipeIds.contains(recipeId.toString());
   }
 
-  // late final List<String>? favoriteRecipeIds ;
-  Future<List<String>?> getFavoriteRecipes({required MySharedKeys key}) async {
-    return   MyCache.preferences?.
-     getStringList(MySharedKeys.favoriteRecipes.name);
+  // // late final List<String>? favoriteRecipeIds ;
+  // Future<List<String>?> getFavoriteRecipes({required MySharedKeys key}) async {
+  //   return   MyCache.preferences?.
+  //    getStringList(MySharedKeys.favoriteRecipes.name);
+ int selectedIndex= 0;
+ void changeCategories(int index){
+   selectedIndex = index;
 
-  }
+   emit(ChangeCategoriesState());
+ }
+
+
 }
 
-// static String getString({required MySharedKeys key,}) {
-// return preferences?.getString(key.name,) ?? '';
-// }

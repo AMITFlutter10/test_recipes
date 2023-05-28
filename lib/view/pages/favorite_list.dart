@@ -40,6 +40,7 @@ import 'package:flutter/material.dart';
 
 import '../../model/services/local_storage/shared_preferences.dart';
 import '../../utilities/enums.dart';
+import '../shared_widgets/default_text.dart';
 
 class FavoritesList extends StatefulWidget {
   const FavoritesList({Key? key}) : super(key: key);
@@ -59,41 +60,32 @@ class _FavoritesListState extends State<FavoritesList> {
 
   Future<void> _loadFavorites() async {
     final prefs = MyCache.preferences;
-    final favoriteRecipeIds = prefs?.getStringList(MySharedKeys.favoriteRecipes.name) ?? [];
+    final favoriteRecipeIds =
+        prefs?.getStringList(MySharedKeys.favoriteRecipes.name) ?? [];
     setState(() {
       _favoriteRecipeIds = favoriteRecipeIds;
     });
   }
 
-  // void _toggleFavorite(String recipeId) async {
-  //   await toggleFavorite(recipeId: recipeId);
-  //   _loadFavorites();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Favorite Recipes'),
+        title: const DefaultText(text: 'Favorite Recipes'),
       ),
       body: _favoriteRecipeIds.isNotEmpty
           ? ListView.builder(
-        itemCount: _favoriteRecipeIds.length,
-        itemBuilder: (context, index) {
-          final recipeId = _favoriteRecipeIds[index];
-          return ListTile(
-            title: Text('Recipe $recipeId'),
-            // trailing: IconButton(
-            //   icon: Icon(Icons.favorite),
-            //   color: Colors.red,
-            //   onPressed: () => _toggleFavorite(recipeId),
-            // ),
-          );
-        },
-      )
+              itemCount: _favoriteRecipeIds.length,
+              itemBuilder: (context, index) {
+                final recipeId = _favoriteRecipeIds[index];
+                return ListTile(
+                  title: DefaultText(text: 'Recipe $recipeId'),
+                );
+              },
+            )
           : Center(
-        child: Text('You have no favorite recipes.'),
-      ),
+              child: Text('You have no favorite recipes.'),
+            ),
     );
   }
 }

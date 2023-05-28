@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sizer/sizer.dart';
 import '../../model/services/local_storage/shared_preferences.dart';
 import '../../utilities/app_constants.dart';
 import '../../utilities/enums.dart';
@@ -18,20 +19,19 @@ class LoginPage extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           body: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(3.h),
             child: Form(
               key: formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const DefaultText(
+                   DefaultText(
                     text: "Login",
                     color: Colors.teal,
-                    fontSize: 30,
+                    fontSize: 30.sp,
                     fontWeight: FontWeight.bold,
                   ),
-                  const SizedBox(height: 20,),
-
+                   SizedBox(height: 2.h,),
                   DefaultFormField(
                       controller: emailController,
                       keyboardType: TextInputType.emailAddress,
@@ -53,7 +53,7 @@ class LoginPage extends StatelessWidget {
                         }
                         return null;
                       }),
-                  const SizedBox(height: 20,),
+                   SizedBox(height: 2.h),
                   DefaultFormField(
                       obscureText: cubit.isPassword,
                       controller: passwordController,
@@ -79,7 +79,7 @@ class LoginPage extends StatelessWidget {
                         }
                         return null;
                       }),
-                  const SizedBox(height: 20,),
+                  SizedBox(height: 2.h,),
 
                   MainButton(
                     text: 'Login',

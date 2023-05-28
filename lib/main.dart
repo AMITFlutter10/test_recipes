@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sizer/sizer.dart';
 import 'package:test_recipes_app/utilities/router.dart';
 import 'package:test_recipes_app/view_model/Favorites/favorite_cubit.dart';
 import 'package:test_recipes_app/view_model/account/login_cubit.dart';
@@ -25,14 +26,16 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => RecipesCubit()),
         BlocProvider(create: (context) => FavoriteCubit()),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
-          useMaterial3: true,
-        ),
-        // home:const RecipesPage(),
-        onGenerateRoute: onGenerate,
+      child:Sizer(builder: (context, orientation, deviceType) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+            useMaterial3: true,
+          ),
+          // home:const RecipesPage(),
+          onGenerateRoute: onGenerate,
+        );}
       ),
     );
   }

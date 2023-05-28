@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sizer/sizer.dart';
+import 'package:test_recipes_app/view_model/Favorites/favorite_cubit.dart';
 import '../../utilities/app_constants.dart';
 import '../../view_model/product/recipes_cubit.dart';
 import '../shared_widgets/card_recipes.dart';
@@ -39,19 +41,19 @@ class _RecipesPageState extends State<RecipesPage> {
           },
         );
       } else if (state is LoadingRecipesErrorState) {
-        Navigator.of(context).pop(); // remove the dialog
+        Navigator.of(context).pop();
       }
     },
     builder: (context, state) {
     return Scaffold(
           body: SafeArea(
               child: Padding(
-                  padding: const EdgeInsets.all(18.0),
+                  padding:  EdgeInsets.all(.93.h),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
-                          height: 65,
+                          height: 8.h,
                           width: double.infinity,
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal,
@@ -59,7 +61,7 @@ class _RecipesPageState extends State<RecipesPage> {
                             itemBuilder: (context, index) => buildCategoriesItem(index),
                           ),
                         ),
-                       const SizedBox(height: 20,),
+                        SizedBox(height: 2.h),
                         CarouselSlider(
                           options: CarouselOptions(
                             aspectRatio: 2.0,
@@ -69,13 +71,13 @@ class _RecipesPageState extends State<RecipesPage> {
                           ),
                           items: imgList,
                         ),
-                        const DefaultText(
+                         DefaultText(
                           text: 'Recipes',
                           fontWeight: FontWeight.bold,
-                          fontSize: 30,
+                          fontSize: 20.sp,
                         ),
-                        const SizedBox(
-                          height: 10,
+                         SizedBox(
+                          height: 1.h
                         ),
                         Expanded(
                           child: ListView.separated(
@@ -103,10 +105,9 @@ class _RecipesPageState extends State<RecipesPage> {
   Widget buildCategoriesItem(int index) {
     return GestureDetector(
       onTap: () {
-          setState(() {
-            selectedIndex = index;
-            Navigator.pushNamed(context, categories[index]);
-          });
+
+        FavoriteCubit.get(context).changeCategories(index);
+        Navigator.pushNamed(context, categories[index]);
       },
       child: Container(
         alignment: Alignment.center,

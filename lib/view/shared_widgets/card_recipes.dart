@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sizer/sizer.dart';
 import 'package:test_recipes_app/model/recipes_model.dart';
 import 'package:test_recipes_app/view/shared_widgets/default_text.dart';
 
@@ -20,7 +21,7 @@ class RecipesCard extends StatelessWidget {
                     context, 'recipeDetailsPage', arguments: recipes);
               },
               child: Padding(
-                padding: const EdgeInsets.all(18.0),
+                padding:  EdgeInsets.all(.9.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -29,19 +30,19 @@ class RecipesCard extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 16.0, top: 10),
                       child: DefaultText(
                           text: "${recipes.name}",
-                          fontSize: 18,
+                          fontSize: 13.sp,
                           fontWeight: FontWeight.bold),
                     ),
                     ListTile(
                       title: DefaultText(
                         text: "Fats : ${recipes.fats}",
-                        fontSize: 18,
+                        fontSize: 11.sp,
                         fontWeight: FontWeight.w400,
                         color: Colors.grey[700],
                       ),
                       subtitle: DefaultText(
                         text: "Calories : ${recipes.calories}",
-                        fontSize: 16,
+                        fontSize: 11.sp,
                         fontWeight: FontWeight.w400,
                         color: Colors.grey[700],
                       ),
